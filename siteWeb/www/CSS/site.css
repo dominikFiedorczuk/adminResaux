@@ -1,0 +1,43 @@
+body{
+    background-image: url("../../IMG/imageFond.jpg");
+    font-family: "Times New Roman", sans-serif;
+
+
+}
+header{
+    background-image: url("../../IMG/imageTitre.jpg");
+    margin: -2%;
+    height: 100px;
+    text-align: center;
+}
+h1{
+    color: chocolate;
+}
+
+.contact{
+    padding: 1%;
+}
+
+.Menu {
+    box-shadow: 3px 3px 3px black;
+    text-shadow: 3px 3px 3px black;
+    text-align: left;
+    margin: 5% 0 0 0;
+}
+
+a{
+    color: white;
+    font-weight: bold;
+    margin: 70px;
+    text-decoration: none;
+
+}
+a:hover {
+    color: black;
+}
+.images {
+    /*display:none;*/
+    padding: 5%;
+    text-align: center;
+
+}
