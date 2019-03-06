@@ -1,0 +1,19 @@
+zone "wt20.ephec-ti.be" {
+	type master;
+	file "/etc/bind/db.wt20.ephec-ti.be";
+};
+
+zone "127.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.127";
+};
+
+zone "0.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.0";
+};
+
+zone "255.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.255";
+};
