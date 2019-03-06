@@ -1,0 +1,5 @@
+zone "51.in-addr.arpa" {
+        type master;
+        notify no;
+        file "/etc/bind/db.wt20.ephec-ti.be";
+};
