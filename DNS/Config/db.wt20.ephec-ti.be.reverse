@@ -1,0 +1,15 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+$ORIGIN 147.77.51.in-addr.arpa.
+@	IN	SOA	ns.wt20.ephec-ti.be. root.wt20.ephec-ti.be. (
+			      2		; Serial
+			  43200		; Refresh
+			   7200		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ns.wt20.ephec-ti.be.
+; ajout de mail plus tard : 83	IN	PTR	mail.wt20.ephec-ti.be
+83	IN	PTR	www.wt20.ephec-ti.be
