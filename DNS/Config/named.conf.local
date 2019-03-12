@@ -1,0 +1,11 @@
+#Déclaration du fichier de résolution directe
+zone "wt20.ephec-ti.be" in {
+        type master;
+        file "/etc/bind/db.wt20.ephec-ti.be.direct";
+};
+
+#Déclaration du fichier de résolution inverse
+zone "147.77.51.in-addr.arpa" in {
+    type master;
+    file "/etc/bind/db.wt20.ephec-ti.be.reverse";
+};
