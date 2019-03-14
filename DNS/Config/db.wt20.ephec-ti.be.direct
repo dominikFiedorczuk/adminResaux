@@ -11,10 +11,13 @@ $ORIGIN wt20.ephec-ti.be.
 			 604800 )	; Negative Cache TTL
 ;
 ; NS record
-@	IN	NS	ns.wt20.ephec-ti.be.
+@		IN	NS	ns.wt20.ephec-ti.be.
 
 ; A record
-@	IN	A	51.77.147.83
-ns	IN	A	51.77.147.83
-www	IN 	A 	51.77.147.83
+ns		IN	A	51.77.147.83
 
+; servWeb
+serverWeb	IN	A	51.77.147.83
+www		IN 	CNAME	serverWeb
+b2b		IN	CNAME	serverWeb
+intranet	IN	CNAME	serverWeb
