@@ -1,5 +1,5 @@
 ;
-; BIND data file for local loopback interface
+; BIND reverse data file for 51.77.147.83
 ;
 $TTL	604800
 $ORIGIN 147.77.51.in-addr.arpa.
@@ -10,6 +10,6 @@ $ORIGIN 147.77.51.in-addr.arpa.
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
-@	IN	NS	ns.wt20.ephec-ti.be.
+@		NS	ns.wt20.ephec-ti.be.
 ; ajout de mail plus tard : 83	IN	PTR	mail.wt20.ephec-ti.be
-83	IN	PTR	www.wt20.ephec-ti.be
+83		PTR	www.wt20.ephec-ti.be
