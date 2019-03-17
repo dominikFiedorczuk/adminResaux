@@ -12,4 +12,4 @@ $ORIGIN 147.77.51.in-addr.arpa.
 ;
 @		NS	ns.wt20.ephec-ti.be.
 ; ajout de mail plus tard : 83	IN	PTR	mail.wt20.ephec-ti.be
-83		PTR	www.wt20.ephec-ti.be
+83		PTR	www.wt20.ephec-ti.be.
