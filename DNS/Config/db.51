@@ -1,15 +1,14 @@
 ;
 ; BIND reverse data file for 51.77.147.83
 ;
-$TTL	604800
+$TTL    604800
 $ORIGIN 147.77.51.in-addr.arpa.
-@	IN	SOA	ns.wt20.ephec-ti.be. root.wt20.ephec-ti.be. (
-			      2		; Serial
-			  43200		; Refresh
-			   7200		; Retry
-			2419200		; Expire
-			 604800 )	; Negative Cache TTL
-;
-@		NS	ns.wt20.ephec-ti.be.
-; ajout de mail plus tard : 83	IN	PTR	mail.wt20.ephec-ti.be
-83		PTR	www.wt20.ephec-ti.be.
+@       IN      SOA     ns.wt20.ephec-ti.be. root.wt20.ephec-ti.be. (
+                              2         ; Serial
+                             8H         ; Refresh
+                            30M         ; Retry
+                        2419200         ; Expire
+                             8H )       ; Negative Cache TTL
+        IN       NS      ns.wt20.ephec-ti.be.
+; ajout de mail plus tard : 83  IN      PTR     mail.wt20.ephec-ti.be
+83      IN      PTR     wt20.ephec-ti.be.
