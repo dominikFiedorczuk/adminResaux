@@ -14,7 +14,7 @@ $ORIGIN wt20.ephec-ti.be.
 @               IN      NS      ns.wt20.ephec-ti.be.
 
 ; A record
-ns              IN      A       51.77.147.83
+ns              IN      A       51.77.147.80
 
 ; servWeb
 serverWeb       IN      A       51.77.147.83
