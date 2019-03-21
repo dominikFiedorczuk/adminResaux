@@ -5,10 +5,10 @@ RUN apt-get update \
 			&& apt-get install -y dnsutils \
 			&& apt-get install -y vim 
 
-ADD configDNS/db.wt20.ephec-ti.be /etc/bind/
-ADD configDNS/named.conf.local /etc/bind/
-ADD configDNS/named.conf.default-zones /etc/bind/
-ADD configDNS/named.conf.options /etc/bind/
+ADD https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/config/db.wt20.ephec-ti.be /etc/bind/
+ADD https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/config/named.conf.local /etc/bind/
+ADD https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/config/named.conf.default-zones /etc/bind/
+ADD https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/config/named.conf.options /etc/bind/
 
 WORKDIR /etc/bind
 
