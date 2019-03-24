@@ -1,10 +1,10 @@
-acl trusted { localhost;
-              localnets;
-	            51.77.147.80;
-              51.77.147.83;
+acl trusted { 
+	      51.77.147.83;
+              51.77.147.80;
+	      localhost;
               };
-acl outside { any;
-              };
+	      
+acl outside { any; };
               
 options {
 	directory "/var/cache/bind";
