@@ -4,8 +4,6 @@ RUN apt-get update \
 		&& apt-get install -y bind9 \
 		&& apt-get install -y dnsutils \
 		&& apt-get install -y vim 
-			
-RUN chmod /etc/bind/*
 
 ADD https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/Config/db.wt20.ephec-ti.be /etc/bind/
 ADD https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/Config/named.conf.local /etc/bind/
