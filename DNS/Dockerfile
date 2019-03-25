@@ -1,6 +1,6 @@
 FROM ubuntu
 
-USER root
+USER fshatskiy
 
 RUN apt-get update \
 			&& apt-get install -y bind9 \
