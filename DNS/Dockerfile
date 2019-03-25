@@ -1,5 +1,7 @@
 FROM ubuntu
 
+USER root
+
 RUN apt-get update \
 			&& apt-get install -y bind9 \
 			&& apt-get install -y dnsutils \
