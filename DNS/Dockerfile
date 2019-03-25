@@ -5,14 +5,10 @@ RUN apt-get update \
 			&& apt-get install -y dnsutils \
 			&& apt-get install -y vim 
 
-USER root
-
-RUN chmod 755 /etc/bind/*
-
-ADD https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/Config/db.wt20.ephec-ti.be /etc/bind/
-ADD https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/Config/named.conf.local /etc/bind/
-ADD https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/Config/named.conf.default-zones /etc/bind/
-ADD https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/Config/named.conf.options /etc/bind/
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/Config/db.wt20.ephec-ti.be /etc/bind/
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/Config/named.conf.local /etc/bind/
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/Config/named.conf.default-zones /etc/bind/
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/tree/master/DNS/Config/named.conf.options /etc/bind/
 
 WORKDIR /etc/bind
 
