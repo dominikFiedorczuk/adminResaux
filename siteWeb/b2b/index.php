@@ -7,64 +7,67 @@
 </head>
 
 <body>
-
 <form action="INC/infoAcheteurs.php" method="post">
+    <h2>Ajouter le client</h2>
     <p>
-        <label for="entreprise">Entreprise</label> : <input type="text" name="entreprise" id="entreprise" / ><br />
-        <label for="telephone">Numero de telephone</label> :  <input type="text" name="telephone" id="telephone"  /><br />
-        <label for="adresse">Adresse de l entreprise</label> :  <input type="text" name="adresse" id="adresse" /><br />
-        <input type="submit" value="Ajouter fournisseur" />
+        <label for="entreprise">Nom du client</label> : <input type="text" name="entreprise" id="entreprise" / ><br />
+        <label for="adresse">Adresse du client</label> :  <input type="text" name="adresse" id="adresse" /><br />
+        <input type="submit" value="Ajouter client" />
     </p>
 </form>
     <?php
     try {
-        $bdd = new PDO("mysql:host=localhost;dbname=b2b", "root", "");
+        $bdd = new PDO("mysql:host=172.17.0.3;dbname=WoodyToys", "root", "");
     }
     catch(Exception $e){
         die('ERROR: ' . $e->getMessage());
     }
-    $reponse = $bdd->query('SELECT entreprise, telephone, adresse FROM acheteurs ORDER BY id');
+    $clients = $bdd->query('SELECT ID_Client, NOM, ADRESSE FROM Client ORDER BY ID_Client');
     $table ='';
     $table.=
+        '<h2>Clients</h2>'.
         '<table>
             <thead>
                 <tr>
-                    <th>Entreprise</th>
-                    <th>Numero de telephone</th>
-                    <th>Adresse de l entreprise</th>
+                    <th>ID du client</th>
+                    <th>Nom du client</th>
+                    <th>Adresse du client</th>
                 </tr>
             </thead>
             <tbody>';
-    while($donnes = $reponse->fetch()){
+    while($donnesClient = $clients->fetch()){
         $table.=
-            '<tr><td>' . htmlspecialchars($donnes['entreprise']) . '</td>' .
-            '<td>' . htmlspecialchars($donnes['telephone']) . '</td>' .
-            '<td>' . htmlspecialchars($donnes['adresse']) . '</td>'.
+            '<tr><td>'.  htmlspecialchars($donnesClient['ID_Client']) . '</td>'.
+            '<td>' . htmlspecialchars($donnesClient['NOM']) . '</td>' .
+            '<td>' . htmlspecialchars($donnesClient['ADRESSE']) . '</td>'.
 '</tr>';
     }
     $table .=
         '</tbody>
     </table>';
     echo $table;
-    $reponse->closeCursor();
+    $clients->closeCursor();
     ?>
 
 <form action="INC/commandes.php" method="post">
+    <h2>Ajouter la commande</h2>
     <p>
-        <label for="acheteur">Entreprise</label> : <input type="text" name="acheteur" id="acheteur" / ><br />
-        <label for="commande">Numero de telephone</label> :  <input type="text" name="commande" id="commande"  /><br />
+        <label for="idClient">ID du client</label> :  <input type="text" name="idClient" id="idClient"  /><br />
+        <label for="commande">Commande</label> :  <input type="text" name="commande" id="commande"  /><br />
         <input type="submit" value="Ajouter la commande" />
     </p>
 </form>
 <?php
 try {
-    $bdd = new PDO("mysql:host=localhost;dbname=b2b", "root", "");
-} catch (Exception $e) {
+    $bdd = new PDO("mysql:host=;dbname172.17.0.3=WoodyToys", "root", "");
+}
+catch(Exception $e){
     die('ERROR: ' . $e->getMessage());
 }
-$req = $bdd->query('SELECT numCommande, fournisseur, commande FROM commande ORDER BY numCommande');
+$commande = $bdd->query('SELECT ID_COMMANDE, ID_Client, COMANDE FROM Commande ORDER BY ID_COMMANDE');
 $table = '';
 $table .=
+    '<h2>Commandes</h2>'.
     '<table>
             <thead>
                 <tr>
@@ -74,18 +77,18 @@ $table .=
                 </tr>
             </thead>
             <tbody>';
-while ($donne = $req->fetch()) {
+while ($donnesCommande = $commande->fetch()) {
     $table .=
-        '<tr><td>' . htmlspecialchars($donne['numCommande']) . '</td>' .
-        '<td>' . htmlspecialchars($donne['fournisseur']) . '</td>' .
-        '<td>' . htmlspecialchars($donne['commande']) . '</td>' .
+        '<tr><td>' . htmlspecialchars($donnesCommande['ID_COMMANDE']) . '</td>' .
+        '<td>' . htmlspecialchars($donnesCommande['ID_Client']) . '</td>' .
+        '<td>' . htmlspecialchars($donnesCommande['COMANDE']) . '</td>' .
         '</tr>';
 }
 $table .=
     '</tbody>
     </table>';
 echo $table;
-$req->closeCursor();
+$commande->closeCursor();
 ?>
 </body>
 </html>
