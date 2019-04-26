@@ -22,19 +22,16 @@ RUN ln -s /etc/nginx/sites-available/intranet.wt20.ephec-ti.be /etc/nginx/sites-
 RUN sed -i -e 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/7.2/fpm/php.ini
 
 # Créer les répertoires pour les certificats HTTPS
-RUN mkdir -p /etc/nginx/ssl
+RUN mkdir -p /etc/nginx/letsencrypt/live/b2b.wt20.ephec-ti.be/
+RUN mkdir -p /etc/nginx/letsencrypt/live/www.wt20.ephec-ti.be/
 
 # Copier les certificats HTTPS du site B2B
-COPY ./configWeb/b2b.wt20.ephec-ti.crt /etc/nginx/ssl/
-COPY ./configWeb/b2b.wt20.ephec-ti.key /etc/nginx/ssl/
+COPY ~/config/letsencrypt/live/b2b.wt20.ephec-ti.be/fullchain.pem /etc/nginx/letsencrypt/live/b2b.wt20.ephec-ti.be/
+COPY ~/config/letsencrypt/live/b2b.wt20.ephec-ti.be/privkey.pem /etc/nginx/letsencrypt/live/b2b.wt20.ephec-ti.be/
 
 # Copier les certificats HTTPS du site statique
-COPY ./configWeb/wt20.ephec-ti.crt /etc/nginx/ssl/
-COPY ./configWeb/wt20.ephec-ti.key /etc/nginx/ssl/
-
-#Copier les certificats HTTPS de l'intrantet
-COPY ./configWeb/intranet.wt20.ephec-ti.crt /etc/nginx/ssl/
-COPY ./configWeb/intranet.wt20.ephec-ti.key /etc/nginx/ssl/
+COPY ~/letsencrypt/live/www.wt20.ephec-ti.be/fullchain.pem /etc/nginx/letsencrypt/live/www.wt20.ephec-ti.be/
+COPY ~/letsencrypt/live/www.wt20.ephec-ti.be/privkey.pem /etc/nginx/letsencrypt/live/www.wt20.ephec-ti.be/
 
 # Exposer les ports
 EXPOSE 80 443
