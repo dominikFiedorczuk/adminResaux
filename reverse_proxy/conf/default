@@ -1,0 +1,10 @@
+server {
+	#Ecoute sur le port 80 en IPv4 et IPv6
+    listen 80;
+    listen [::]:80;
+	
+	#IP du serveur
+    server_name 51.77.147.80;
+	#Redirige sur le site statique si  on veut acceder au serveur par IP
+    return 301 https://www.wt20.ephec-ti.be$request_uri;
+}
