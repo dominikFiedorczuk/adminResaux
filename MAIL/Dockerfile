@@ -30,5 +30,5 @@ COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/wt20.e
 RUN postmap /etc/postfix/virtual_mailbox_domains
 RUN postmap /etc/postfix/virtual_alias
 EXPOSE 25 110 143 465 587 993 995
-service postfix start
-dovecot -F
+CMD service postfix start
+CMD dovecot -F
