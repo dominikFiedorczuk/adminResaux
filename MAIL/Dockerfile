@@ -25,8 +25,8 @@ COPY 10-auth.conf /etc/dovecot/conf.d/10-auth.conf
 COPY 10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
 COPY auth-passwdfile.conf.ext /etc/dovecot/conf.d/auth-passwdfile.conf.ext
 COPY dovecot-users /etc/dovecot/dovecot-users
-COPY wt1.ephec-ti.be.crt /wt20.ephec-ti.be.crt
-COPY wt1.ephec-ti.be.key /wt20.ephec-ti.be.key
+COPY wt20.ephec-ti.be.crt /wt20.ephec-ti.be.crt
+COPY wt20.ephec-ti.be.key /wt20.ephec-ti.be.key
 COPY start_services.sh /opt/start_services.sh
 RUN postmap /etc/postfix/virtual_mailbox_domains
 RUN postmap /etc/postfix/virtual_alias
