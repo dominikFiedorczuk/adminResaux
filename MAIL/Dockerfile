@@ -13,21 +13,20 @@ RUN chown -R vmail:vmail /var/mail/vhosts/
 
 
 
-COPY hosts /etc/hosts
-COPY mailname /etc/mailname
-COPY main.cf /etc/postfix/main.cf
-COPY virtual_mailbox_domains /etc/postfix/virtual_mailbox_domains
-COPY virtual_alias /etc/postfix/virtual_alias
-COPY master.cf /etc/postfix/master.cf
-COPY 10-mail.conf /etc/dovecot/conf.d/10-mail.conf
-COPY 10-master.conf /etc/dovecot/conf.d/10-master.conf
-COPY 10-auth.conf /etc/dovecot/conf.d/10-auth.conf
-COPY 10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
-COPY auth-passwdfile.conf.ext /etc/dovecot/conf.d/auth-passwdfile.conf.ext
-COPY dovecot-users /etc/dovecot/dovecot-users
-COPY wt20.ephec-ti.be.crt /wt20.ephec-ti.be.crt
-COPY wt20.ephec-ti.be.key /wt20.ephec-ti.be.key
-COPY start_services.sh /opt/start_services.sh
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/hosts /etc/hosts
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/mailname /etc/mailname
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/main.cf /etc/postfix/main.cf
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/virtual_mailbox_domains /etc/postfix/virtual_mailbox_domains
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/virtual_alias /etc/postfix/virtual_alias
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/master.cf /etc/postfix/master.cf
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/10-mail.conf /etc/dovecot/conf.d/10-mail.conf
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/10-master.conf /etc/dovecot/conf.d/10-master.conf
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/10-auth.conf /etc/dovecot/conf.d/10-auth.conf
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/auth-passwdfile.conf.ext /etc/dovecot/conf.d/auth-passwdfile.conf.ext
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/dovecot-users /etc/dovecot/dovecot-users
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/wt20.ephec-ti.be.crt /wt20.ephec-ti.be.crt
+COPY https://github.com/fshatskiy/ProjetAdminSys-R-seaux/blob/master/MAIL/wt20.ephec-ti.be.key /wt20.ephec-ti.be.key
 RUN postmap /etc/postfix/virtual_mailbox_domains
 RUN postmap /etc/postfix/virtual_alias
 EXPOSE 25 110 143 465 587 993 995
