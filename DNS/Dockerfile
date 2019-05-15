@@ -1,7 +1,6 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y bind9 \
-		&& apt-get install -y bind9 \
 		&& apt-get install -y dnsutils \
 		&& apt-get install -y vim
 
