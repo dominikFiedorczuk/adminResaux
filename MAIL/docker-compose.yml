@@ -3,7 +3,7 @@ version: '2'
 
 services:
   mail:
-    image: remyvase/wt_mail:latest
+    image: adminprojet/admin_projet_repo:mail
     container_name: mail
     restart: always
     ports:
