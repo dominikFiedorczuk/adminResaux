@@ -29,7 +29,7 @@ RUN nginx -t
 
 # Exposer les ports
 EXPOSE 80 443
-EXPOSE 4433
+EXPOSE 4433 4434
 
 # Lancer PHP et nginx en mode démon
 CMD service php7.2-fpm start && nginx -g "daemon off;"
