@@ -10,15 +10,12 @@ RUN apt-get update \
 COPY ./conf/default /etc/nginx/sites-available/
 COPY ./conf/wt20.ephec-ti.be /etc/nginx/sites-available/
 COPY ./conf/b2b.wt20.ephec-ti.be /etc/nginx/sites-available/
-COPY ./conf/intranet.wt20.ephec-ti.be /etc/nginx/sites-available/
 
 #On copie les config dans sites-enabled
 RUN rm /etc/nginx/sites-enabled/default
 RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 RUN ln -s /etc/nginx/sites-available/wt20.ephec-ti.be /etc/nginx/sites-enabled/
 RUN ln -s /etc/nginx/sites-available/b2b.wt20.ephec-ti.be /etc/nginx/sites-enabled/
-RUN ln -s /etc/nginx/sites-available/intranet.wt20.ephec-ti.be /etc/nginx/sites-enabled/
-
 #On cree le repertoire pour les certificats
 RUN mkdir -p /etc/nginx/letsencrypt/
 

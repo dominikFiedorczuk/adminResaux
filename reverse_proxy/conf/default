@@ -8,3 +8,14 @@ server {
 	#Redirige sur le site statique si  on veut acceder au serveur par IP
     return 301 https://www.wt20.ephec-ti.be$request_uri;
 }
+
+server {
+
+	listen 80;
+	listen [::]:80;
+	
+	#IP du serveur en IPv6
+	server_name [2001:41d0:404:200::cf1];
+
+	return 301 https://www.wt20.ephec-ti.be$request_uri;
+}	
