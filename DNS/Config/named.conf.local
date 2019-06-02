@@ -3,7 +3,6 @@ acl internals {
   51.77.203.11;
   2001:41d0:404:200::cf1/128; //ipv6 Fil
   2001:41d0:404:200::dd5/128; //ipv6 Dom
-  2001:41d0:404:200::12f7/128;//ipv6 Const
   localhost;
 };
 view internal {
