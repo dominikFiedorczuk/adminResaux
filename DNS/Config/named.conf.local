@@ -1,16 +1,15 @@
-/*acl internals {
+acl internals {
   51.77.147.80;
-  51.77.147.83;
   51.77.203.11;
-  2001:41d0:404:200::cf1; //ipv6 Fil
-  2001:41d0:404:200::dd5; //ipv6 Dom
-  2001:41d0:404:200::12f7;//ipv6 Const
-  127.0.0.1;
+  2001:41d0:404:200::cf1/128; //ipv6 Fil
+  2001:41d0:404:200::dd5/128; //ipv6 Dom
+  2001:41d0:404:200::12f7/128;//ipv6 Const
+  localhost;
 };
-*/
 view internal {
-    match-clients { any; };
-    recursion no;
+    match-clients { internals; };
+    recursion yes;
+    allow-recursion { internals; };
     zone "wt20.ephec-ti.be" {
         type master;
         file "/etc/bind/db.wt20.ephec-ti.be";
@@ -18,7 +17,6 @@ view internal {
 };
 view external {
     match-clients { any; };
-    recursion no;
     zone "wt20.ephec-ti.be" {
         type master;
         file "/etc/bind/db.wt20.ephec-ti.be";
