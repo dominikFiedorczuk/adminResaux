@@ -18,10 +18,12 @@ options {
         // If BIND logs error messages about the root key being expired,
         // you will need to update your keys.  See https://www.isc.org/bind-keys
         //========================================================================
-       
+        // Détermine autmatiquement si le logiciel de securité de DNS "DNSSEC" est installé
 	dnssec-validation auto;
 
         auth-nxdomain no;    # conform to RFC103
+	// Ecouter sur les interfaces locales uniquement (IPV4)
         listen-on {any;};
+	// Ecouter sur les interfaces locales uniquement (IPV6)
 	listen-on-v6 {any;};
 };
