@@ -5,7 +5,7 @@
 $TTL 10H
 $ORIGIN wt20.ephec-ti.be.
 @       1D      IN      SOA     ns.wt20.ephec-ti.be. root.wt20.ephec-ti.be. (
-                                1          ; serial number
+                                2          ; serial number
                                 3600       ; refresh [1h]
                                 600        ; retry [10m]
                                 1209600    ; expire[14d]
@@ -27,14 +27,13 @@ intranet	IN	CNAME	web
 
 ;MAIL
 mail		  IN	A	51.77.203.11
-		  IN	AAAA	2001:41d0:404:200::12f7
-		  IN	MX	10	mail
+                  IN    MX      10      mail
 		  IN    TXT     "v=spf1 include:mail.wt20.ephec-ti.be ip4:51.77.203.11 -all"
-smtp		  IN	CNAME	mail
-pop3		  IN	CNAME	mail
-imap		  IN	CNAME	mail
-_imaps._tcp 	  IN    SRV     1 1 993 mail.wt20.ephec-ti.be.
-_submission._tcp  IN    SRV     1 1 587 mail.wt20.ephec-ti.be.
+_imaps._tcp 	  IN    SRV     1 1 993 mail
+_submission._tcp  IN    SRV     1 1 587 mail
+mail._domainkey   IN    TXT     ( "v=DKIM1; h=sha256; k=rsa; t=y; "
+          "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtv7olvd1pyqhu3Qtwiy9IDVrTkPdNDAXVtKeVGCfaoed29tQcwPIDULk/Kp3UpEO4Vxuwwn8IuLhIPc/gu6uRxiVNwqeFx78Fknu15AMdV5IkC05BYSvEXLZ3e6fvmkIvbADk/T0ZM6MPxM0Z4H9zD7KHIYfGJyLYJyjYmEM+iQ7jddd6VBgkiuiLNOxOSfzjx2Dge6MWpjdwD"
+          "DGDN12A9OMWkygCJSAiPsvbs4iAxeOC17Jrctyj12ZoWCo6QCgF2p6vVQ+ERAGxng2zsRiZejjducgGmKZW7Grw9osLytGPmY/s6Y9S6DoUh0kapZyZ6hHngXzc5FsSwudvSZFuwIDAQAB" )  ; ----- DKIM key mail for wt20.ephec-ti.be
 
 ;Certificats 
 _acme-challenge.mail	30	IN	TXT	"-9m6nHVFd0L_fbkRi_Co7IYu_1WSYchPV7BR8jPaKeY"
